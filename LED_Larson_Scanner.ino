@@ -1,8 +1,9 @@
 /*
 * Larson Scanner
 * Uses the six Power Width Modulation ports {3,5,6,9,10,11} on an Arduino Uno 
-* to create a simple six LED Larson Scanner. Connect these six ports in order though 220Ohm resisters 
-* to the Anode leg of the LED's.  Connect cathodes of LED's to GND port.
+* to create a simple six LED Larson Scanner. Connect these six ports in order 
+* though 220 Ohm resisters to the Anode leg of the LED's.  Connect Cathode leg 
+* of LED's to GND port.
 * 
 * Change cycleWaitTime to speed up or slow down the scan rate. Larger is slower.
 * 
@@ -27,8 +28,7 @@ void setup() {
   for(int i=0;i<ledCount;i++){   
     pinMode(ledPins[i],OUTPUT);    
     analogWrite(ledPins[i], 0);
-  }
-  
+  }  
 }
 
 void loop() {
@@ -72,7 +72,6 @@ void loop() {
     if (i<3){
       analogWrite(ledPins[0],ledHigh);
     }
-    delay(cycleWaitTime);
-        
+    delay(cycleWaitTime);        
   }
 }
